@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function ContactMain() {
   return (
-        <main>
+        <main className='mt-20'>
 
-            <section className="w-full flex items-center justify-center min-h-150  bg-gray py-12 px-6 md:px-16">
+            <section className="w-full flex items-center justify-center min-h-150 bg-[#4A4A4A] py-12 px-6 md:px-16">
                 <div className="w-full flex flex-col md:flex-row items-center justify-around gap-50">
  
 

@@ -39,7 +39,7 @@ export default function Sidebar() {
     return (
         <section className="relative z-[1000]">
 
-            <button onClick={toggleMenu} aria-label="Abrir menu" className="flex items-center justify-center w-10 h-10 rounded-lg text-[#0D0D0D] hover:bg-[#D99923]/10 transition">
+            <button type='button' onClick={toggleMenu} aria-label="Abrir menu" className="flex items-center justify-center w-10 h-10 rounded-lg text-[#0D0D0D] hover:bg-[#D99923]/10 transition">
                 <FaBars className="text-xl" />
             </button>
 
@@ -51,7 +51,7 @@ export default function Sidebar() {
                 <div className="flex items-center justify-between px-6 py-5 border-b border-[#BFBFBF]/30">
                     <span className="text-sm font-semibold tracking-wider text-[#BFBFBF] uppercase">navegação</span>
 
-                    <button onClick={closeMenu} aria-label="Fechar menu" className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] hover:bg-[#D99923]/10 hover:text-[#D99923] transition">
+                    <button type='button' onClick={closeMenu} aria-label="Fechar menu" className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] hover:bg-[#D99923]/10 hover:text-[#D99923] transition">
                         <FaTimes />
                     </button>
                 </div>
