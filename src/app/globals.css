@@ -8,12 +8,12 @@
   user-select: none;
 }
 
-@theme inline {
-  --collor-black: #0D0000;
-  --collor-white: #F2F2F2;
-  --collor-gray: #4A4A4A;
-  --collor-gold: #E0AB1A;
-  --collor-green: #79BF0F;
+@theme {
+  --color-black: #0D0000;
+  --color-white: #F2F2F2;
+  --color-gray: #4A4A4A;
+  --color-gold: #E0AB1A;
+  --color-green: #79BF0F;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
