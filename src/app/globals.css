@@ -5,7 +5,7 @@
   box-sizing: border-box;
   scrollbar-width: none;
   font-family: "Poppins", sans-serif;
-  user-select: none;
+/*   user-select: none; */
 }
 
 @theme {

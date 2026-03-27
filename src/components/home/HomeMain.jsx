@@ -1,9 +1,9 @@
-
+import InitialContent from "./InitialContent"
 
 export default function HomeMain() {
-  return (
+    return (
         <main>
-
+            <InitialContent />
         </main>
     )
 }
