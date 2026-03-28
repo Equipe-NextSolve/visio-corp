@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { HiOfficeBuilding } from 'react-icons/hi'
 import { MdEmail, MdPhone, MdBadge, MdGroups, MdSend } from 'react-icons/md'
 import Title from '@/utils/Title'
+import { AnimatedField } from '@/utils/AnimatedField'
+import { formatCNPJ, formatPhone } from '@/utils/formatters'
 
 const C = {
     black:  '#0D0000',
@@ -60,45 +62,10 @@ const themeInputs = createTheme({
     },
 })
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 24 },
-    visible: (i) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-    }),
-}
 
-function AnimatedField({ index, children }) {
-    return (
-        <motion.div
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-20px' }}
-            variants={fadeUp}
-        >
-            {children}
-        </motion.div>
-    )
-}
 
 const employeeRanges = ['1 – 10', '11 – 50', '51 – 200', '201 – 500', '501 – 1000', '1000+']
 
-function formatCNPJ(v) {
-    const d = v.replace(/\D/g, '').slice(0, 14)
-    return d
-        .replace(/^(\d{2})(\d)/, '$1.$2')
-        .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
-        .replace(/\.(\d{3})(\d)/, '.$1/$2')
-        .replace(/(\d{4})(\d)/, '$1-$2')
-}
-
-function formatPhone(v) {
-    const d = v.replace(/\D/g, '').slice(0, 11)
-    if (d.length <= 10) return d.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3').trim()
-    return d.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3').trim()
-}
 
 export default function FormContact() {
     const [form, setForm] = useState({
@@ -119,7 +86,7 @@ export default function FormContact() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 py: 6,
-                px: 2,
+                px: { xs: 0, sm: 3 },
                 backgroundColor: '#F0F2F5',
             }}>
 
@@ -138,8 +105,8 @@ export default function FormContact() {
                             flexDirection: 'column',
                             gap: 2.5,
                             backgroundColor: '#fafafa',
-                            borderRadius: 4,
-                            p: { xs: 3, sm: 4 },
+                            borderRadius: { xs: 0, sm: 4 },
+                            p: { xs: 2.5, sm: 4 },
                             boxShadow: '0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06), 0 20px 48px rgba(0,0,0,0.10)',
                             border: '1px solid rgba(0,0,0,0.06)',
                         }}

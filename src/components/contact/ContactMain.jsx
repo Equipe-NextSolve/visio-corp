@@ -7,9 +7,8 @@ export default function ContactMain() {
   return (
         <main className='mt-20'>
 
-            <section className="w-full flex items-center justify-center min-h-150 bg-[#4A4A4A] py-12 px-6 md:px-16">
-                <div className="w-full flex flex-col md:flex-row items-center justify-around gap-50">
- 
+            <section className="w-full flex items-center justify-center md:min-h-150 bg-gray py-12 px-6 md:px-16">
+                <div className="w-full flex flex-col md:flex-row items-center justify-around gap-20 md:gap-50">
 
                     <motion.div
                         className=" flex flex-col gap-4"
@@ -17,7 +16,7 @@ export default function ContactMain() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: 'easeOut' }}
                     >
-                        <h2 className="text-white text-3xl sm:text-4xl font-semibold leading-snug tracking-wide">
+                        <h2 className="text-white text-2xl sm:text-4xl font-semibold leading-snug tracking-wide">
                             Não perca tempo!{' '}
                             <br />
                             Entre em contato

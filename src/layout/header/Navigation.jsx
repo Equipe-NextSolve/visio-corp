@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Link from 'next/link'
 
 export default function Navigation() {
@@ -18,14 +18,14 @@ export default function Navigation() {
                             <Link href={item.href} className='relative text-lg text-black font-semibold transition-all duration-300 hover:text-gray-500
                             before:content-[""] before:absolute
                             before:left-0 before:-bottom-1
-                            before:w-0 before:h-[2px]
+                            before:w-0 before:h-0.5
                             before:bg-yellow-500
                             before:transition-all before:duration-300
                             hover:before:w-full'>{item.label}</Link>
                         </li>
                     ))}
                 </ul>
-                <Link href='' className='text-base font-semibold bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-1 px-4 rounded-xl'>
+                <Link href='/contact' className='text-base font-semibold bg-linear-to-r from-yellow-400 to-yellow-600 text-white py-1 px-4 rounded-xl'>
                     Contato
                 </Link>
             </div>
