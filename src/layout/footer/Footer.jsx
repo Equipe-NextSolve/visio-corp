@@ -21,7 +21,6 @@ export default function Footer() {
     return (
         <footer className="relative bg-black border-t border-white/5 overflow-hidden select-none">
 
-            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-gold to-transparent opacity-60" />
 
 
             <div className="absolute inset-0 pointer-events-none">
