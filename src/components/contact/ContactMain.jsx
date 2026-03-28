@@ -2,10 +2,11 @@
 import Image from 'next/image'
 import FormContact from "./FormContact";
 import { motion } from "framer-motion";
+import Questions from './Questions';
 
 export default function ContactMain() {
   return (
-        <main className='mt-20'>
+        <main className='mt-20 bg-[#F0F2F5]'>
 
             <section className="w-full flex items-center justify-center md:min-h-150 bg-gray py-12 px-6 md:px-16">
                 <div className="w-full flex flex-col md:flex-row items-center justify-around gap-20 md:gap-50">
@@ -52,6 +53,7 @@ export default function ContactMain() {
                 </div>
             </section>
             <FormContact/>
+            <Questions/>
         </main>
     )
 }

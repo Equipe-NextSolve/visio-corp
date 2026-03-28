@@ -28,11 +28,11 @@ export default function Sidebar() {
     }, [isOpen, closeMenu]);
 
     const links = [
-        { label: "Home", href: "/" },
-        { label: "Sobre", href: "/" },
-        { label: "Empresas", href: "/" },
-        { label: "Suporte", href: "/" },
-        { label: "Contato", href: "/" },
+        {id:1, label: "Home", href: "/" },
+        {id:2, label: "Sobre", href: "/" },
+        {id:3, label: "Empresas", href: "/" },
+        {id:4, label: "Suporte", href: "/" },
+        {id:5, label: "Contato", href: "/" },
     ];
 
     return (
@@ -65,7 +65,7 @@ export default function Sidebar() {
 
                         return (
                             <Link
-                                key={link.href}
+                                key={link.id}
                                 href={link.href}
                                 onClick={closeMenu}
                                 className={`px-4 py-3 rounded-lg font-medium transition-all ${active
