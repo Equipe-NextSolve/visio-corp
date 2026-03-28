@@ -1,5 +1,6 @@
 'use client'
 import Title from '@/utils/Title'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const faqs = [
@@ -30,6 +31,31 @@ const faqs = [
     },
 ]
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.1 },
+    },
+}
+ 
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    },
+}
+ 
+const headerVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
+}
+
 
 export default function Questions() {
     const [openIndex, setOpenIndex] = useState(null)
@@ -40,38 +66,66 @@ export default function Questions() {
 
     return (
         <section className="w-full max-w-3xl mx-auto px-4 pb-10 flex flex-col gap-10">
-            <div className='w-full flex flex-col justify-center items-center gap-7'>
-                <Title label="Perguntas Frequentes"/>
-                <p>Confira algumas dúvidas comuns que separamos para você. 
-Caso não encontre o que procura, entre em contato com a nossa equipe, teremos prazer em ajudar!</p>
-            </div>
+            <motion.div
+                className="w-full flex flex-col justify-center items-center gap-7"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                variants={headerVariants}
+            >
+                <Title label="Perguntas Frequentes" />
+                <p className="text-center">
+                    Confira algumas dúvidas comuns que separamos para você.{' '}
+                    Caso não encontre o que procura, entre em contato com a nossa equipe, teremos prazer em ajudar!
+                </p>
+            </motion.div>
 
-            <div className='w-full max-w-3xl mx-auto px-4 pb-10 flex flex-col gap-2'>
+            <motion.div
+                className="w-full max-w-3xl mx-auto px-4 pb-10 flex flex-col gap-2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                variants={containerVariants}
+            >
                 {faqs.map((faq) => (
-                    <div
+                     <motion.div
                         key={faq.id}
+                        variants={itemVariants}
                         className="border-b border-white/10 pb-4"
                     >
                         <button
-                            type='button'
+                            type="button"
                             onClick={() => toggle(faq.id)}
                             className="w-full flex justify-between items-center text-left gap-4 py-2 cursor-pointer group"
                         >
                             <span className="text-gold font-semibold text-base group-hover:brightness-125 transition-all duration-200">
                                 {faq.question}
                             </span>
-                            <span className={`text-gold text-xl transition-transform duration-300 ${openIndex === faq.id ? 'rotate-45' : 'rotate-0'}`}>
+                            <motion.span
+                                animate={{ rotate: openIndex === faq.id ? 45 : 0 }}
+                                transition={{ duration: 0.25, ease: 'easeInOut' }}
+                                className="text-gold text-xl shrink-0"
+                            >
                                 +
-                            </span>
+                            </motion.span>
                         </button>
-                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === faq.id ? 'max-h-40 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                            <p className="text-gray text-sm leading-relaxed">
+ 
+                        <motion.div
+                            initial={false}
+                            animate={openIndex === faq.id
+                                ? { height: 'auto', opacity: 1, marginTop: 8 }
+                                : { height: 0, opacity: 0, marginTop: 0 }
+                            }
+                            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                            className="overflow-hidden"
+                        >
+                            <p className="text-gray text-sm leading-relaxed pb-2">
                                 {faq.answer}
                             </p>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     )
 }
