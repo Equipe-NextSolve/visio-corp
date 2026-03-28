@@ -13,7 +13,7 @@ export default function Sidebar() {
 
     const closeMenu = useCallback(() => { setIsOpen(false); }, []);
 
-    useEffect(() => { closeMenu(); }, [pathname, closeMenu]);
+    useEffect(() => { closeMenu(); }, [closeMenu]);
 
     useEffect(() => { document.body.style.overflow = isOpen ? "hidden" : "auto"; }, [isOpen]);
 
