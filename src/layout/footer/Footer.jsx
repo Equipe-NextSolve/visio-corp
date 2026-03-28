@@ -23,10 +23,10 @@ export default function Footer() {
 
 
 
-            <div className="absolute inset-0 pointer-events-none">
+            {/* <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-32 -left-32 w-72 h-72 rounded-full bg-gold/5 blur-3xl" />
                 <div className="absolute -bottom-20 right-0 w-64 h-64 rounded-full bg-green/5 blur-3xl" />
-            </div>
+            </div> */}
 
             <div className="relative max-w-6xl mx-auto px-6 pt-14 pb-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
