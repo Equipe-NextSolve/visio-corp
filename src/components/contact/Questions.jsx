@@ -7,7 +7,7 @@ const faqs = [
     {
         id:1,
         question: "Tem custo para a empresa?",
-        answer: "Não. O programa VisionCorp é oferecido com custo zero para a empresa contratante. Os exames oftalmológicos são gratuitos para os colaboradores, e a receita da VisionCorp vem exclusivamente da venda opcional de óculos sem qualquer obrigatoriedade de compra. A empresa não intermedia pagamentos."
+        answer: "Não. O programa VisioCorp é oferecido com custo zero para a empresa contratante. Os exames oftalmológicos são gratuitos para os colaboradores, e a receita da VisioCorp vem exclusivamente da venda opcional de óculos sem qualquer obrigatoriedade de compra. A empresa não intermedia pagamentos."
     },
     {
         id:2,

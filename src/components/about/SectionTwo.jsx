@@ -25,7 +25,7 @@ export default function SectionTwo() {
                             Nossa equipe está preparada para estruturar um atendimento personalizado para sua organização.
                         </p>
                         <p className='text-gray-300 text-md leading-relaxed'>
-                            Entre em contato com nosso departamento comercial e agende uma conversa para conhecer o Programa VisionCorp de Saúde Visual Corporativa.
+                            Entre em contato com nosso departamento comercial e agende uma conversa para conhecer o Programa VisioCorp de Saúde Visual Corporativa.
                         </p>
                     </AnimatedSlideRight>
 

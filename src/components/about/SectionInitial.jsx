@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AnimatedEntrance } from "@/utils/AnimatedEntrance";
 
 const sectionParagraphs = [
-    'Na VisionCorp, contamos com uma equipe altamente qualificada, com elevado nível técnico e treinamento especializado em atendimento óptico voltado à saúde da visão.',
+    'Na VisioCorp, contamos com uma equipe altamente qualificada, com elevado nível técnico e treinamento especializado em atendimento óptico voltado à saúde da visão.',
     'Dispomos de laboratório próprio, equipado com tecnologia de última geração, garantindo excelência em todas as áreas de atuação.',
     'Nosso objetivo é levar comodidade e qualidade até sua empresa, realizando atendimentos diretamente nas dependências corporativas, com agenda organizada, equipe especializada e equipamentos adequados, tudo isso sem custo para os colaboradores.',
 ]
@@ -25,7 +25,7 @@ export default function SectionInitial() {
 
             <div className='flex flex-col items-center gap-5 text-center'>
                 <AnimatedEntrance index={0} className='flex flex-col w-full items-center'>
-                    <h2 className='text-2xl font-bold text-gray-800'>VisionCorp</h2>
+                    <h2 className='text-2xl font-bold text-gray-800'>VisioCorp</h2>
                     <div className='w-12 h-0.5 bg-gold rounded-full' />
                 </AnimatedEntrance>
 

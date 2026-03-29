@@ -35,7 +35,7 @@ export default function Footer() {
                     <div className="flex flex-col gap-4 lg:col-span-1">
                         <Image
                             src="/Logo.png"
-                            alt="VisionCorp"
+                            alt="VisioCorp"
                             width={140}
                             height={48}
                             className="object-contain object-left"
@@ -109,7 +109,7 @@ export default function Footer() {
 
 
                 <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/25 text-xs">
-                    <span>© 2025 VisionCorp. Todos os direitos reservados.</span>
+                    <span>© 2025 VisioCorp. Todos os direitos reservados.</span>
                 </div>
             </div>
         </footer>
