@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Navigation() {
     const links = [
         {id: 1, label: "Home", href: "/" },
-        {id: 2, label: "Sobre", href: "/" },
+        {id: 2, label: "Sobre", href: "/about" },
         {id: 3, label: "Empresas", href: "/" },
         {id: 4, label: "Suporte", href: "/" },
     ]
