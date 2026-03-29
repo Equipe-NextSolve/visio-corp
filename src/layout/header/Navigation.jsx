@@ -15,13 +15,13 @@ export default function Navigation() {
                 <ul className='flex justify-content items-center gap-4 md:gap-8'>
                     {links.map((item) => (
                         <li key={item.id}>
-                            <Link href={item.href} className='relative text-lg text-black font-semibold transition-all duration-300 hover:text-gray-500
+                            <Link href={item.href} className='relative text-lg text-black font-semibold transition-all duration-300 sm:hover:text-gray-500
                             before:content-[""] before:absolute
                             before:left-0 before:-bottom-1
                             before:w-0 before:h-0.5
                             before:bg-yellow-500
                             before:transition-all before:duration-300
-                            hover:before:w-full'>{item.label}</Link>
+                            sm:hover:before:w-full'>{item.label}</Link>
                         </li>
                     ))}
                 </ul>

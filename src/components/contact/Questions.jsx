@@ -98,7 +98,7 @@ export default function Questions() {
                             onClick={() => toggle(faq.id)}
                             className="w-full flex justify-between items-center text-left gap-4 py-2 cursor-pointer group"
                         >
-                            <span className="text-gold font-semibold text-base group-hover:brightness-125 transition-all duration-200">
+                            <span className="text-gold font-semibold text-base sm:group-hover:brightness-125 transition-all duration-200">
                                 {faq.question}
                             </span>
                             <motion.span

@@ -29,10 +29,10 @@ export default function Sidebar() {
 
     const links = [
         {id:1, label: "Home", href: "/" },
-        {id:2, label: "Sobre", href: "/" },
-        {id:3, label: "Empresas", href: "/" },
-        {id:4, label: "Suporte", href: "/" },
-        {id:5, label: "Contato", href: "/" },
+        {id:2, label: "Sobre", href: "/about" },
+        {id:3, label: "Empresas", href: "/companies" },
+        {id:4, label: "Suporte", href: "/suport" },
+        {id:5, label: "Contato", href: "/contact" },
     ];
 
     return (
@@ -54,7 +54,7 @@ export default function Sidebar() {
                 <div className="flex items-center justify-between px-6 py-5 border-b border-[#BFBFBF]/30">
                     <span className="text-sm font-semibold tracking-wider text-[#BFBFBF] uppercase">navegação</span>
 
-                    <button type='button' onClick={closeMenu} aria-label="Fechar menu" className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] hover:bg-[#D99923]/10 hover:text-[#D99923] transition">
+                    <button type='button' onClick={closeMenu} aria-label="Fechar menu" className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923] transition">
                         <FaTimes />
                     </button>
                 </div>
@@ -70,7 +70,7 @@ export default function Sidebar() {
                                 onClick={closeMenu}
                                 className={`px-4 py-3 rounded-lg font-medium transition-all ${active
                                     ? "bg-[#D99923]/15 text-[#D99923]"
-                                    : "text-[#0D0D0D] hover:bg-[#D99923]/10 hover:text-[#D99923]"
+                                    : "text-[#0D0D0D] focus:bg-gray/20 sm:focus:bg-[#D99923]/10 sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923]"
                                     }`}
                             >
                                 {link.label}

@@ -55,7 +55,7 @@ export default function Footer() {
                                 <li key={label}>
                                     <Link
                                         href={href}
-                                        className="text-white/50 text-sm hover:text-white transition-colors duration-200 hover:pl-1"
+                                        className="text-white/50 text-sm sm:hover:text-white transition-colors duration-200 sm:hover:pl-1"
                                         style={{ display: 'inline-block', transition: 'padding 0.2s, color 0.2s' }}
                                     >
                                         {label}
@@ -77,9 +77,9 @@ export default function Footer() {
                                         href={href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-white/50 text-sm hover:text-white transition-colors duration-200 group"
+                                        className="flex items-center gap-2 text-white/50 text-sm sm:hover:text-white transition-colors duration-200 group"
                                     >
-                                        <span className="text-gold/60 group-hover:text-gold transition-colors duration-200">
+                                        <span className="text-gold/60 sm:group-hover:text-gold transition-colors duration-200">
                                             {icon}
                                         </span>
                                         {label}

@@ -39,7 +39,7 @@ export default function SectionFinal() {
                     <AnimatedButton>
                         <Link
                             href="/contact"
-                            className='mt-2 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 cursor-pointer bg-green text-black shadow-[0_0_24px] shadow-green/30 hover:shadow-green/60'
+                            className='mt-2 px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 cursor-pointer bg-green text-black shadow-[0_0_24px] shadow-green/30 sm:hover:shadow-green/60'
                         >
                             Entre em Contato
                         </Link>
