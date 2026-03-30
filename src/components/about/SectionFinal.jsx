@@ -3,7 +3,7 @@ import { AnimatedButton, AnimatedEntrance, AnimatedFade, AnimatedDivider } from 
 import Link from "next/link";
 const sectionParagraphs = [
     'Traga sua empresa para fazer parte do nosso time e ofereça o melhor atendimento aos seus colaboradores. Clique no botão abaixo e fale agora mesmo com a nossa equipe, estamos prontos para dar todo o suporte que sua empresa precisa.',
-    'Na VisionCorp, nosso objetivo é sempre cuidar de você. A saúde visual não é estática: o uso contínuo de telas, a leitura intensa e atividades de alta precisão impactam diretamente o foco e o conforto visual ao longo do tempo.',
+    'Na VisioCorp, nosso objetivo é sempre cuidar de você. A saúde visual não é estática: o uso contínuo de telas, a leitura intensa e atividades de alta precisão impactam diretamente o foco e o conforto visual ao longo do tempo.',
 ]
 
 export default function SectionFinal() {
