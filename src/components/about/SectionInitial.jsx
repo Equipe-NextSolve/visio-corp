@@ -9,7 +9,7 @@ const sectionParagraphs = [
 
 export default function SectionInitial() {
     return (
-        <section className='flex flex-col items-center w-full max-w-2xl px-3 sm:px-6 gap-8'>
+        <section className='flex flex-col items-center w-full max-w-300 px-3 sm:px-6 gap-8'>
         
             <AnimatedEntrance className='relative w-[90%] max-w-175 rounded-2xl overflow-hidden shadow-lg'>
                 <Image
@@ -32,7 +32,7 @@ export default function SectionInitial() {
                 {sectionParagraphs.map((text, i) => (
      
                     <AnimatedEntrance key={text} index={i + 1}>
-                        <p className='text-gray leading-relaxed text-sm max-w-lg'>{text}</p>
+                        <p className='text-gray leading-relaxed tracking-wide text-md sm:text-xl max-w-lg sm:max-w-180'>{text}</p>
                     </AnimatedEntrance>
                 ))}
             </div>

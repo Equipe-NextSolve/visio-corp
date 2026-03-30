@@ -32,7 +32,7 @@ export default function SectionFinal() {
 
                     {sectionParagraphs.map((text, i) => (
                         <AnimatedEntrance key={text} index={i + 2}>
-                            <p className='text-sm leading-relaxed max-w-md text-gray'>{text}</p>
+                            <p className='text-md sm:text-xl leading-relaxed max-w-lg text-gray'>{text}</p>
                         </AnimatedEntrance>
                     ))}
 
