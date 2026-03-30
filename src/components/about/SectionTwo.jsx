@@ -21,10 +21,10 @@ export default function SectionTwo() {
                             Saúde visual com conforto no seu trabalho
                         </h2>
                         <div className='w-[80%] max-w-30 h-0.5 bg-gold rounded-full' />
-                        <p className='text-gray-300 text-md leading-relaxed'>
+                        <p className='text-gray-300 text-md sm:text-[19px] leading-relaxed'>
                             Nossa equipe está preparada para estruturar um atendimento personalizado para sua organização.
                         </p>
-                        <p className='text-gray-300 text-md leading-relaxed'>
+                        <p className='text-gray-300 text-md sm:text-[19px] leading-relaxed'>
                             Entre em contato com nosso departamento comercial e agende uma conversa para conhecer o Programa VisioCorp de Saúde Visual Corporativa.
                         </p>
                     </AnimatedSlideRight>
