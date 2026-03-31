@@ -5,7 +5,6 @@ import { FaArrowRightLong } from "react-icons/fa6";
 export default function AboutHome() {
   return (
     <section className="relative w-full min-h-screen py-24 px-6 flex flex-col items-center justify-center overflow-hidden bg-gray">
-      {/* Estilização do fundo */}
       <div
         className="absolute top-0 left-0 w-72 h-72 bg-black/30 pointer-events-none"
         style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
@@ -63,14 +62,14 @@ export default function AboutHome() {
           <div className="flex items-center gap-4">
             <Link
               href="#"
-              className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-gold/30 hover:shadow-lg bg-gold text-black tracking-wide font-[Poppins] text-sm"
+              className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg transition-all duration-300 sm:hover:scale-[1.03] sm:hover:shadow-gold/30 sm:hover:shadow-lg bg-gold text-black tracking-wide font-[Poppins] text-sm"
             >
               Saiba mais <FaArrowRightLong />
             </Link>
 
             <Link
               href="#"
-              className="text-sm text-white/50 hover:text-white/80 transition-colors duration-200 tracking-wide underline underline-offset-4"
+              className="text-sm text-white/50 sm:hover:text-white/80 transition-colors duration-200 tracking-wide underline underline-offset-4"
             >
               Fale conosco
             </Link>
