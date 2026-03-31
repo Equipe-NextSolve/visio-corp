@@ -44,9 +44,9 @@ export default function AboutHome() {
                     </div>  
 
                     <div className="flex items-center gap-4">
-                        <Link href="#" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-gold/30 hover:shadow-lg bg-gold text-black tracking-wide font-[Poppins] text-sm">Saiba mais <FaArrowRightLong /></Link>
+                        <Link href="#" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg transition-all duration-300 sm:hover:scale-[1.03] sm:hover:shadow-gold/30 sm:hover:shadow-lg bg-gold text-black tracking-wide font-[Poppins] text-sm">Saiba mais <FaArrowRightLong /></Link>
                         
-                        <Link href="#" className="text-sm text-white/50 hover:text-white/80 transition-colors duration-200 tracking-wide underline underline-offset-4">
+                        <Link href="#" className="text-sm text-white/50 sm:hover:text-white/80 transition-colors duration-200 tracking-wide underline underline-offset-4">
                             Fale conosco
                         </Link>
                     </div>

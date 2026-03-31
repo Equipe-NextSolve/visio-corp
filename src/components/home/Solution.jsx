@@ -69,11 +69,11 @@ export default function Solution() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="group flex gap-5 py-5 border-b border-black/8 last:border-b-0 transition-all duration-200 hover:pl-1"
+                className="group flex gap-5 py-5 border-b border-black/8 last:border-b-0 transition-all duration-200 sm:hover:pl-1"
               >
 
-                <div className="shrink-0 w-10 h-10 rounded-lg bg-black flex items-center justify-center mt-0.5 group-hover:bg-gold transition-colors duration-300">
-                  <span className="text-xs font-bold text-white group-hover:text-black font-[Poppins] transition-colors duration-300">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-black flex items-center justify-center mt-0.5 sm:group-hover:bg-gold transition-colors duration-300">
+                  <span className="text-xs font-bold text-white sm:group-hover:text-black font-[Poppins] transition-colors duration-300">
                     {item.number}
                   </span>
                 </div>
