@@ -1,6 +1,7 @@
 import InitialContent from "./InitialContent";
 import AboutHome from "./AboutHome";
 import Solution from "./Solution";
+import Operation from "./Operation";
 
 export default function HomeMain() {
   return (
@@ -8,6 +9,7 @@ export default function HomeMain() {
       <InitialContent />
       <AboutHome />
       <Solution />
+      <Operation />
     </main>
   );
 }
