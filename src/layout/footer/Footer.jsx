@@ -6,15 +6,15 @@ import { FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
 const institucional = [
-    { label: 'Sobre nós', href: '' },
-    { label: 'Política de Privacidade', href: '' },
+    { label: 'Sobre nós', href: '/about' },
+    { label: 'Política de Privacidade', href: '/policiesAndPrivacy' },
     { label: 'Contato', href: '/contact' },
 ]
 
 const redes = [
-    { label: 'Instagram', href: '', icon: <FiInstagram size={14} /> },
+    { label: 'Instagram', href: 'https://www.instagram.com/oticavisiocorp/', icon: <FiInstagram size={14} /> },
     { label: 'E-mail Corporativo', href: 'mailto:', icon: <FiMail size={14} /> },
-    { label: 'Whatsapp (Vendedor)', href: '', icon: <FaWhatsapp size={14} /> },
+    { label: 'Whatsapp (Vendedor)', href: 'https://wa.me/5585986990288', icon: <FaWhatsapp size={14} /> },
 ]
 
 export default function Footer() {

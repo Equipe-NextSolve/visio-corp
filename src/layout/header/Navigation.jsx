@@ -6,7 +6,7 @@ export default function Navigation() {
         {id: 1, label: "Home", href: "/" },
         {id: 2, label: "Sobre", href: "/about" },
         {id: 3, label: "Empresas", href: "/" },
-        {id: 4, label: "Suporte", href: "/" },
+        {id: 4, label: "Suporte", href: "/policiesAndPrivacy" },
     ]
 
     return (
