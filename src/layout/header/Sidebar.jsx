@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { usePathname } from "next/navigation";
 import Link from 'next/link'
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -53,9 +54,14 @@ export default function Sidebar() {
         { id: 5, label: "Contato", href: "/contact" },
     ];
 
-    return (
-        <section className="relative">
+    const [mounted, setMounted] = useState(false);
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    return (
+        <>
             {/* Botão */}
             <button
                 type='button'
@@ -66,23 +72,25 @@ export default function Sidebar() {
                 <FaBars className="text-xl" />
             </button>
 
-            {/* Overlay */}
-            <div
-                className={`fixed inset-0 z-1000 transition duration-300 ${
-                    isOpen
-                        ? "bg-black/40 backdrop-blur-md opacity-100"
-                        : "opacity-0 pointer-events-none"
-                }`}
-            />
+            {mounted && createPortal(
+                <>
+                    {/* Overlay */}
+                    <div
+                        className={`fixed inset-0 z-9998 min-h-screen h-full transition duration-300 ${
+                            isOpen
+                                ? "bg-black/40 backdrop-blur-md opacity-100"
+                                : "opacity-0 pointer-events-none"
+                        }`}
+                    />
 
-            {/* Sidebar */}
-            <aside
-                ref={sidebarRef}
-                className={`fixed top-0 right-0 z-1001 h-screen w-75 bg-[#f0f0f0]
-                shadow-[-10px_0_40px_rgba(0,0,0,0.15)]
-                transform transition-transform duration-300 ease-in-out
-                ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-            >
+                    {/* Sidebar */}
+                    <aside
+                        ref={sidebarRef}
+                        className={`fixed top-0 right-0 z-9999 h-screen w-75 bg-[#f0f0f0]
+                        shadow-[-10px_0_40px_rgba(0,0,0,0.15)]
+                        transform transition-transform duration-300 ease-in-out
+                        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+                    >
 
                 {/* Header */}
                 <div className="flex items-center justify-between px-6 py-5 border-b border-[#BFBFBF]/30">
@@ -128,7 +136,10 @@ export default function Sidebar() {
                         VisioCorp Saúde Visual
                     </span>
                 </div>
-            </aside>
-        </section>
+                    </aside>
+                </>,
+                document.body
+            )}
+        </>
     )
 }
