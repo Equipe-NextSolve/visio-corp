@@ -36,8 +36,8 @@ export default function Footer() {
                         <Image
                             src="/Logo2.png"
                             alt="VisioCorp"
-                            width={140}
-                            height={48}
+                            width={150}
+                            height={60}
                             className="object-contain object-left"
                         />
                         <p className="text-white/40 text-xs leading-relaxed max-w-45">
