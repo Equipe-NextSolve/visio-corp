@@ -34,7 +34,7 @@ export default function Footer() {
 
                     <div className="flex flex-col gap-4 lg:col-span-1">
                         <Image
-                            src="/Logo2.png"
+                            src="/logo2.png"
                             alt="VisioCorp"
                             width={150}
                             height={60}
