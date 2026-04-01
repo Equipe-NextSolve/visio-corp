@@ -17,7 +17,7 @@ export default function BenefitForAll() {
     ];
 
     return (
-        <section className="min-h-screen flex flex-col w-full mx-auto max-w-300 items-center gap-20 px-6 ">
+        <section className="my-15 flex flex-col w-full mx-auto max-w-300 items-center gap-20 px-6 ">
             <Title label="Benefícios para Todos" />
 
             <div className="flex flex-col sm:flex-row w-full justify-between gap-10">
