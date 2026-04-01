@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "framer-motion"
+import { useIsMobile } from "@/hooks/useIsMobile"
 
 export const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -48,11 +49,12 @@ export const expandX = {
 const VIEWPORT = { once: true, margin: '-20px' }
 
 export function AnimatedEntrance({ index = 0, children, className }) {
+    const isMobile = useIsMobile();
     return (
         <motion.div
             className={className}
             custom={index}
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={fadeUp}
@@ -63,11 +65,13 @@ export function AnimatedEntrance({ index = 0, children, className }) {
 }
 
 export function AnimatedFade({ index = 0, children, className }) {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             className={className}
             custom={index}
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={fadeIn}
@@ -78,10 +82,12 @@ export function AnimatedFade({ index = 0, children, className }) {
 }
 
 export function AnimatedSlideLeft({ children, className }) {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             className={className}
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={slideLeft}
@@ -92,10 +98,12 @@ export function AnimatedSlideLeft({ children, className }) {
 }
 
 export function AnimatedSlideRight({ children, className }) {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             className={className}
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={slideRight}
@@ -106,10 +114,12 @@ export function AnimatedSlideRight({ children, className }) {
 }
 
 export function AnimatedDivider({ className }) {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
             className={className}
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={expandX}
@@ -118,15 +128,17 @@ export function AnimatedDivider({ className }) {
 }
 
 export function AnimatedButton({ children, className, ...props }) {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
-            initial="hidden"
+            initial={isMobile ? "visible" : "hidden"}
             whileInView="visible"
             viewport={VIEWPORT}
             variants={fadeUp}
             custom={4}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={isMobile ? {} : { scale: 1.05 }}
+            whileTap={isMobile ? {} : { scale: 0.97 }}
         >
             <div className={className} {...props}>
                 {children}
