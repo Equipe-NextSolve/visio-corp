@@ -19,7 +19,7 @@ const redes = [
 
 export default function Footer() {
     return (
-        <footer className="relative bg-black border-t border-white/5 overflow-hidden select-none">
+        <footer className="relative bg-black border-t border-white/5 overflow-hidden select-none w-full">
 
 
 

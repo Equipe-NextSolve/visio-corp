@@ -6,7 +6,7 @@ import Message from "@/utils/Message";
 
 export default function AboutMain() {
   return (
-    <main className="flex flex-col mt-30 items-center">
+    <main className="flex flex-col mt-30 items-center w-full">
       <SectionInitial />
       <SectionTwo />
       <SectionFinal />
