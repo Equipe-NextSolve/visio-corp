@@ -32,7 +32,7 @@ const cards = [
 
 export default function CommitmentFuture() {
     return (
-        <section className="min-h-screen flex flex-col items-center gap-6 w-full mx-auto max-w-350 px-6 py-16 bg-gray-50">
+        <section className="min-h-screen flex flex-col items-center gap-6 w-full mx-auto max-w-350 px-6 py-16">
 
             <div className="flex flex-col items-center gap-7 text-center w-full">
                 <Title label="Nosso Compromisso com o Futuro" />
