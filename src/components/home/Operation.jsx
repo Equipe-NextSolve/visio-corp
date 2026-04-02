@@ -45,38 +45,39 @@ const features = [
 
 export default function Operation() {
   return (
-    <section className="relative w-full min-h-screen bg-gray px-6 py-12 flex flex-col items-center justify-center">
-      {/* Estilização do fundo */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3">
-        <div className="w-px h-24 bg-gold/40" />
-        <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-        <div className="w-px h-24 bg-gold/40" />
-      </div>
-      <div
-        className="absolute bottom-0 right-0 w-80 h-80 bg-black/45 pointer-events-none"
-        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
-      />
-
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-semibold text-white mb-4 relative inline-block">
+    <section className="relative w-full min-h-screen bg-gray px-4 sm:px-6 py-12 flex flex-col items-center justify-center">
+    
+      <div className="text-center mb-12 max-w-2xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4 relative inline-block">
           Entregamos o Serviço Completo para sua Empresa!
           <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-gold shadow-lg shadow-gold/50"></span>
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl place-items-center">
         {features.map(({ id, title, description, icon: Icon }) => (
           <div
             key={id}
-            className="bg-black/50 border border-gold/20 p-6 rounded-xl hover:border-gold transition-all duration-300 pointer h-40 w-90"
+            className="
+              w-full max-w-sm
+              bg-black/50 border border-gold/20 
+              p-6 rounded-xl 
+              hover:border-gold transition-all duration-300
+              flex flex-col justify-center
+              text-center sm:text-left
+            "
           >
-            <div className="text-gold text-3xl mb-4">
+            <div className="text-gold text-3xl mb-4 flex justify-center sm:justify-start">
               <Icon />
             </div>
 
-            <h2 className="text-white text-xl font-semibold mb-2">{title}</h2>
+            <h2 className="text-white text-lg sm:text-xl font-semibold mb-2">
+              {title}
+            </h2>
 
-            <p className="text-white text-sm">{description}</p>
+            <p className="text-white text-sm">
+              {description}
+            </p>
           </div>
         ))}
       </div>
