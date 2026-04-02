@@ -18,7 +18,7 @@ export default function InitialPolicie() {
       </div>
 
       {/* CONTAINER */}
-      <div className="relative z-10 max-w-6xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+      <div className="relative z-10 max-w-6xl w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16 py-30">
         <div className="flex flex-col gap-7 max-w-xl text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2">
             <span className="w-5 h-px bg-gold" />
