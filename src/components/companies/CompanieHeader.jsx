@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CompanieHeader() {
   return (
@@ -55,28 +56,27 @@ export default function CompanieHeader() {
           </div>
 
           <div className="flex items-center gap-4 pt-1">
-            <button
+            <Link
               type="button"
+              href="/about"
               className="bg-gold hover:bg-gold/90 text-black text-sm font-semibold px-7 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(224,171,26,0.35)]"
             >
               Saiba mais
-            </button>
-            <button
+            </Link>
+            <Link
               type="button"
+              href='/contact'
               className="text-white/60 hover:text-white text-sm font-light flex items-center gap-2 transition-colors duration-200"
             >
               Entre em contato
               <span className="text-gold">→</span>
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* Right — image */}
         <div className="relative shrink-0">
-          {/* Glow behind image */}
           <div className="absolute -inset-4 bg-[radial-gradient(ellipse_at_center,rgba(224,171,26,0.18)_0%,transparent_70%)] rounded-3xl" />
 
-          {/* Gold frame accent */}
           <div className="absolute -top-2 -right-2 w-24 h-24 border-t border-r border-gold/40 rounded-tr-2xl" />
           <div className="absolute -bottom-2 -left-2 w-24 h-24 border-b border-l border-gold/40 rounded-bl-2xl" />
 

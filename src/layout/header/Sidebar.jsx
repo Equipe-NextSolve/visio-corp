@@ -1,145 +1,138 @@
-"use client"
-import { useEffect, useState, useRef, useCallback } from 'react'
-import { createPortal } from 'react-dom'
+"use client";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
-import Link from 'next/link'
+import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Sidebar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname();
-    const sidebarRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const sidebarRef = useRef(null);
 
-    const toggleMenu = useCallback(() => { 
-        setIsOpen(prev => !prev); 
-    }, []);
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
-    const closeMenu = useCallback(() => { 
-        setIsOpen(false); 
-    }, []);
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
-    useEffect(() => { 
-        closeMenu(); 
-    }, [closeMenu]);
+  useEffect(() => {
+    closeMenu();
+  }, [closeMenu]);
 
-    useEffect(() => { 
-        document.body.style.overflow = isOpen ? "hidden" : "auto"; 
-    }, [isOpen]);
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (
-                sidebarRef.current &&
-                event.target instanceof Node &&
-                !sidebarRef.current.contains(event.target)
-            ) {
-                closeMenu();
-            }
-        };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        event.target instanceof Node &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
 
-        if (isOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
-        }
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isOpen, closeMenu]);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, closeMenu]);
 
-    const links = [
-        { id: 1, label: "Home", href: "/" },
-        { id: 2, label: "Sobre", href: "/about" },
-        { id: 3, label: "Empresas", href: "/companies" },
-        { id: 4, label: "Suporte", href: "/policiesAndPrivacy" },
-        { id: 5, label: "Contato", href: "/contact" },
-    ];
+  const links = [
+    { id: 1, label: "Home", href: "/" },
+    { id: 2, label: "Sobre", href: "/about" },
+    { id: 3, label: "Empresas", href: "/companies" },
+    { id: 4, label: "Suporte", href: "/policiesAndPrivacy" },
+    { id: 5, label: "Contato", href: "/contact" },
+  ];
 
-    const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    return (
-        <>
-            {/* Botão */}
-            <button
-                type='button'
-                onClick={toggleMenu}
-                aria-label="Abrir menu"
-                className="flex items-center justify-center w-10 h-10 rounded-lg text-[#0D0D0D] hover:bg-[#D99923]/10 transition"
-            >
-                <FaBars className="text-xl" />
-            </button>
+  return (
+    <>
+      <button
+        type="button"
+        onClick={toggleMenu}
+        aria-label="Abrir menu"
+        className="flex items-center justify-center w-10 h-10 rounded-lg text-[#0D0D0D] hover:bg-[#D99923]/10 transition"
+      >
+        <FaBars className="text-xl" />
+      </button>
 
-            {mounted && createPortal(
-                <>
-                    {/* Overlay */}
-                    <div
-                        className={`fixed inset-0 z-9998 min-h-screen h-full transition duration-300 ${
-                            isOpen
-                                ? "bg-black/40 backdrop-blur-md opacity-100"
-                                : "opacity-0 pointer-events-none"
-                        }`}
-                    />
-
-                    {/* Sidebar */}
-                    <aside
-                        ref={sidebarRef}
-                        className={`fixed top-0 right-0 z-9999 h-screen w-75 bg-[#f0f0f0]
+      {mounted &&
+        createPortal(
+          <>
+            <div
+              className={`fixed inset-0 z-9998 min-h-screen h-full transition duration-300 ${
+                isOpen
+                  ? "bg-black/40 backdrop-blur-md opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            />
+            <aside
+              ref={sidebarRef}
+              className={`fixed top-0 right-0 z-9999 h-screen w-75 bg-[#f0f0f0]
                         shadow-[-10px_0_40px_rgba(0,0,0,0.15)]
                         transform transition-transform duration-300 ease-in-out
                         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+            >
+              <div className="flex items-center justify-between px-6 py-5 border-b border-[#BFBFBF]/30">
+                <span className="text-sm font-semibold tracking-wider text-[#BFBFBF] uppercase">
+                  navegação
+                </span>
+
+                <button
+                  type="button"
+                  onClick={closeMenu}
+                  aria-label="Fechar menu"
+                  className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923] transition"
+                >
+                  <FaTimes />
+                </button>
+              </div>
+
+              <nav className="flex flex-col px-4 py-4 gap-1">
+                {links.map((link) => {
+                  const active = pathname === link.href;
+
+                  return (
+                    <Link
+                      key={link.id}
+                      href={link.href}
+                      onClick={closeMenu}
+                      className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                        active
+                          ? "bg-[#D99923]/15 text-[#D99923]"
+                          : "text-[#0D0D0D] sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923]"
+                      }`}
                     >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </nav>
 
-                {/* Header */}
-                <div className="flex items-center justify-between px-6 py-5 border-b border-[#BFBFBF]/30">
-                    <span className="text-sm font-semibold tracking-wider text-[#BFBFBF] uppercase">
-                        navegação
-                    </span>
-
-                    <button
-                        type='button'
-                        onClick={closeMenu}
-                        aria-label="Fechar menu"
-                        className="flex items-center justify-center w-8 h-8 rounded-lg text-[#BFBFBF] sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923] transition"
-                    >
-                        <FaTimes />
-                    </button>
-                </div>
-
-                {/* Links */}
-                <nav className="flex flex-col px-4 py-4 gap-1">
-                    {links.map((link) => {
-                        const active = pathname === link.href;
-
-                        return (
-                            <Link
-                                key={link.id}
-                                href={link.href}
-                                onClick={closeMenu}
-                                className={`px-4 py-3 rounded-lg font-medium transition-all ${
-                                    active
-                                        ? "bg-[#D99923]/15 text-[#D99923]"
-                                        : "text-[#0D0D0D] sm:hover:bg-[#D99923]/10 sm:hover:text-[#D99923]"
-                                }`}
-                            >
-                                {link.label}
-                            </Link>
-                        );
-                    })}
-                </nav>
-
-                {/* Footer */}
-                <div className="absolute bottom-0 w-full px-6 py-4 border-t border-[#BFBFBF]/30">
-                    <span className="text-sm font-semibold text-[#D99923]">
-                        VisioCorp Saúde Visual
-                    </span>
-                </div>
-                    </aside>
-                </>,
-                document.body
-            )}
-        </>
-    )
+              <div className="absolute bottom-0 w-full px-6 py-4 border-t border-[#BFBFBF]/30">
+                <span className="text-sm font-semibold text-[#D99923]">
+                  VisioCorp Saúde Visual
+                </span>
+              </div>
+            </aside>
+          </>,
+          document.body,
+        )}
+    </>
+  );
 }
