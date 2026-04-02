@@ -3,6 +3,7 @@ import SectionInitial from "./SectionInitial";
 import SectionTwo from "./SectionTwo";
 import SectionFinal from "./SectionFinal";
 import Message from "@/utils/Message";
+import Loanding from "@/utils/Loanding";
 
 export default function AboutMain() {
   return (
@@ -11,6 +12,7 @@ export default function AboutMain() {
       <SectionTwo />
       <SectionFinal />
       <Message />
+      <Loanding />
     </main>
   );
 }

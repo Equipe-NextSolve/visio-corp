@@ -1,6 +1,7 @@
 import InitialPolicie from "./InitialPolicie";
 import DescriptionPolicie from "./DescriptionPolicie";
 import Message from "@/utils/Message";
+import Loanding from "@/utils/Loanding";
 
 export default function PoliciesAndPrivacy() {
   return (
@@ -8,6 +9,7 @@ export default function PoliciesAndPrivacy() {
       <InitialPolicie />
       <DescriptionPolicie />
       <Message />
+      <Loanding />
     </main>
   );
 }

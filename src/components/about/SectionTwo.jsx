@@ -3,7 +3,8 @@ import Image from "next/image"
 import { AnimatedSlideLeft, AnimatedSlideRight } from "@/utils/AnimatedEntrance"
 export default function SectionTwo() {
     return (
-        <section className='w-full bg-[#3a3f47] min-h-150 mt-16 py-12 px-6 flex  justify-center'>
+        <section className='w-full bg-[#3a3f47] min-h-250 mt-16 py-12 px-6 flex  justify-center'>
+            
                  <div className='flex flex-col sm:flex-row items-center gap-8 w-full max-w-300'>
 
                     <AnimatedSlideLeft className=' w-full max-w-120 sm:w-1/2 rounded-xl overflow-hidden shadow-lg shrink-0'>

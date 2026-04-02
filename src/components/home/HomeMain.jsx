@@ -6,6 +6,7 @@ import BenefitForAll from "./BenefitForAll";
 import CommitmentFuture from "./CoommitmentFuture";
 import Questions from "../contact/Questions";
 import Message from "@/utils/Message";
+import Loanding from "@/utils/Loanding";
 
 export default function HomeMain() {
   return (
@@ -17,7 +18,8 @@ export default function HomeMain() {
       <BenefitForAll />
       <CommitmentFuture />
       <Questions />
-      <Message/>
+      <Message />
+      <Loanding />
     </main>
   );
 }

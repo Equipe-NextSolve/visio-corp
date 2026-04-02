@@ -10,7 +10,6 @@ const sectionParagraphs = [
 export default function SectionInitial() {
     return (
         <section className='flex flex-col items-center w-full max-w-300 px-3 sm:px-6 gap-8'>
-        
             <AnimatedEntrance className='relative w-[90%] max-w-175 rounded-2xl overflow-hidden shadow-lg'>
                 <Image
                     src="/img6.png"
