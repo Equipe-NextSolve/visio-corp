@@ -7,7 +7,7 @@ import Loanding from "@/utils/Loanding";
 
 export default function AboutMain() {
   return (
-    <main className="flex flex-col mt-30 items-center w-full">
+    <main className="flex flex-col mt-30 items-center overflow-hidden">
       <SectionInitial />
       <SectionTwo />
       <SectionFinal />
