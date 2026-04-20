@@ -1,6 +1,18 @@
+"use client"
+import { useEffect } from "react";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Solution() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-quart",
+      once: true,
+    });
+  }, []);
+
   const items = [
     {
       id: 1,
@@ -44,7 +56,8 @@ export default function Solution() {
       />
 
       <div className="relative z-10 max-w-6xl w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-16 items-center">
-        <div className="flex flex-col gap-7">
+
+        <div className="flex flex-col gap-7" data-aos="fade-right">
           <div className="flex items-center gap-2">
             <div className="w-6 h-px bg-gold" />
             <span className="text-xs font-semibold tracking-[0.22em] uppercase text-gold font-[Poppins]">
@@ -66,12 +79,13 @@ export default function Solution() {
           </p>
 
           <div className="flex flex-col gap-0 mt-2">
-            {items.map((item) => (
+            {items.map((item, index) => (
               <div
                 key={item.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
                 className="group flex gap-5 py-5 border-b border-black/8 last:border-b-0 transition-all duration-200 sm:hover:pl-1"
               >
-
                 <div className="shrink-0 w-10 h-10 rounded-lg bg-black flex items-center justify-center mt-0.5 sm:group-hover:bg-gold transition-colors duration-300">
                   <span className="text-xs font-bold text-white sm:group-hover:text-black font-[Poppins] transition-colors duration-300">
                     {item.number}
@@ -96,9 +110,8 @@ export default function Solution() {
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-end">
+        <div className="flex justify-center md:justify-end" data-aos="fade-left">
           <div className="relative">
-
             <div className="absolute -bottom-4 -left-4 w-full h-full rounded-3xl bg-gold/8 pointer-events-none z-0" />
             <div className="absolute -top-3 -right-3 w-full h-full rounded-3xl border border-black/8 pointer-events-none z-0" />
 
@@ -111,8 +124,11 @@ export default function Solution() {
                 className="object-contain"
               />
             </div>
-
-            <div className="absolute -bottom-5 -left-5 z-20 bg-black text-white rounded-xl px-4 py-3 shadow-lg shadow-black/20 flex flex-col">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="600"
+              className="absolute -bottom-5 -left-5 z-20 bg-black text-white rounded-xl px-4 py-3 shadow-lg shadow-black/20 flex flex-col"
+            >
               <span className="text-gold font-bold text-lg font-[Poppins] leading-none">
                 100%
               </span>

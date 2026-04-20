@@ -1,26 +1,46 @@
+"use client"
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AboutHome() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-out-quart",
+      once: true,
+    });
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen py-24 px-6 flex flex-col items-center justify-center overflow-hidden bg-gray">
       <div
+        data-aos="fade-right"
+        data-aos-delay="400"
         className="absolute top-0 left-0 w-72 h-72 bg-black/30 pointer-events-none"
         style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
       />
       <div
+        data-aos="fade-left"
+        data-aos-delay="600"
         className="absolute bottom-0 right-0 w-80 h-80 bg-black/25 pointer-events-none"
         style={{ clipPath: "polygon(100% 0, 100% 100%, 0 100%)" }}
       />
 
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="800"
+        className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3"
+      >
         <div className="w-px h-24 bg-gold/40" />
         <div className="w-1.5 h-1.5 rounded-full bg-gold" />
         <div className="w-px h-24 bg-gold/40" />
       </div>
 
-      <div className="relative z-10 flex items-center gap-2 mb-6">
+      <div className="relative z-10 flex items-center gap-2 mb-6" data-aos="zoom-in">
         <div className="w-6 h-px bg-gold" />
         <span className="text-xs font-semibold tracking-[0.25em] uppercase text-gold font-[Poppins]">
           Nossa Empresa
@@ -28,7 +48,10 @@ export default function AboutHome() {
         <div className="w-6 h-px bg-gold" />
       </div>
 
-      <h2 className="relative z-10 text-4xl md:text-5xl font-bold text-center mb-16 text-white font-[Poppins] tracking-tight">
+      <h2
+        className="relative z-10 text-4xl md:text-5xl font-bold text-center mb-16 text-white font-[Poppins] tracking-tight"
+        data-aos="fade-up"
+      >
         Sobre a{" "}
         <span className="relative inline-block">
           <span className="text-gold">VisioCorp</span>
@@ -37,7 +60,8 @@ export default function AboutHome() {
       </h2>
 
       <div className="relative z-10 max-w-6xl w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6">
+
+        <div className="flex flex-col gap-6" data-aos="fade-right">
           <p className="text-xl leading-relaxed text-white">
             Apresentamos a VisioCorp, uma empresa dedicada a cuidar da saúde
             visual como forma de valorizar as pessoas dentro das organizações.
@@ -76,16 +100,21 @@ export default function AboutHome() {
           </div>
         </div>
 
-        <div className="w-full flex justify-center md:justify-end">
-          <div className="relative w-full">
-            <div className="absolute -top-3 -right-3 w-full h-full rounded-2xl border border-gold/25 pointer-events-none z-0" />
+        <div className="w-full flex justify-center md:justify-end" data-aos="fade-left">
+          <div className="relative w-full group">
+            <div
+              data-aos="zoom-out"
+              data-aos-delay="400"
+              className="absolute -top-3 -right-3 w-full h-full rounded-2xl border border-gold/25 pointer-events-none z-0"
+            />
+
             <div className="relative z-10 rounded-2xl overflow-hidden w-full shadow-2xl shadow-black/70 ring-1 ring-white/10">
               <Image
                 src="/img1.png"
                 alt="VisioCorp ambiente"
                 width={700}
                 height={900}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover transition-transform duration-700 sm:group-hover:scale-105"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-black/40 to-transparent pointer-events-none" />
