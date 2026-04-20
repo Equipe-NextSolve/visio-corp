@@ -13,7 +13,6 @@ export default function Messenger() {
 
   const contacts = [
     { id: 1, name: "Marlon Ferrari", phone: "5585986990288", label: "85 98699-0288" },
-    { id: 1, name: "Wendell - Teste", phone: "5585997276499", label: "85 98699-0288" },
     { id: 2, name: "Marcos David", phone: "5585996502168", label: "85 99650-2168" }
   ]
 
