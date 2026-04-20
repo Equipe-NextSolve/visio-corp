@@ -46,9 +46,9 @@ export default function Header() {
                 ${isHome && scrolled ? "bg-white backdrop-blur-md shadow-lg" : ""}
                 ${isHome && !scrolled ? "bg-transparent" : ""}
             `}>
-            <section className="max-w-7x1 mx-auto flex items-center justify-around h-full py-10 px-10 w-full">
+            <section className="max-w-7xl mx-auto flex items-center justify-between h-full px-6 w-full">
                 <Logo />
-                <div className="max-[748px]:hidden">
+                <div className="hidden md:block">
                     <Navigation />
                 </div>
                 {isMobile && <Sidebar />}

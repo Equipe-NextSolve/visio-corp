@@ -1,10 +1,18 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Logo() {
     return (
-        <section className='w-150'>
-            <Link href='/' className='relative text-xl font-bold italic before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-yellow-500'>
-                VisioCorp
+        <section className='w-37.5 h-full flex items-center justify-center'>
+            <Link href='/' className='flex items-center justify-center'>
+                <div className="relative w-37.5 h-37.5 ">
+                    <Image
+                        src='/logo3.png'
+                        alt='logo'
+                        fill
+                        className='object-contain py-3'
+                    />
+                </div>
             </Link>
         </section>
     )
