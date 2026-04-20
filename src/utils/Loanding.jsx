@@ -10,8 +10,8 @@ export default function LoadingScreen({ children }) {
     const handleLoad = () => {
       setTimeout(() => {
         setIsExpanding(true);
-        setTimeout(() => setLoading(false), 800);
-      }, 2000);
+        setTimeout(() => setLoading(false), 400);
+      }, 1000);
     };
 
     if (document.readyState === "complete") {
