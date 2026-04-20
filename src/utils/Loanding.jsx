@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { IoGlassesOutline } from "react-icons/io5"; // Ícone elegante de óculos
+import { IoGlassesOutline } from "react-icons/io5"; 
 
 export default function LoadingScreen({ children }) {
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ export default function LoadingScreen({ children }) {
 
   return (
     <div
-      className={`fixed inset-0 flex flex-col items-center justify-center bg-[#050505] z-[9999] transition-all duration-700 ${isExpanding ? "opacity-0 scale-110" : "opacity-100"
+      className={`fixed inset-0 flex flex-col items-center justify-center bg-[#050505] z-9999 transition-all duration-700 ${isExpanding ? "opacity-0 scale-110" : "opacity-100"
         }`}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -57,7 +57,7 @@ export default function LoadingScreen({ children }) {
             <span className="text-gold/50 text-[9px] mt-1 tracking-widest uppercase">VisioCorp Premium</span>
           </div>
 
-          <div className="w-40 h-[1px] bg-white/10 relative overflow-hidden">
+          <div className="w-40 h-px bg-white/10 relative overflow-hidden">
             <div className="absolute inset-0 bg-gold origin-left animate-loading-bar" />
           </div>
         </div>

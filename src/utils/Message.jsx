@@ -8,8 +8,12 @@ export default function Messenger() {
   const [open, setOpen] = useState(false)
   const boxRef = useRef(null)
 
+  const message = "Olá! Vim pelo site e gostaria de saber mais informações."
+  const encodedMessage = encodeURIComponent(message)
+
   const contacts = [
     { id: 1, name: "Marlon Ferrari", phone: "5585986990288", label: "85 98699-0288" },
+    { id: 1, name: "Wendell - Teste", phone: "5585997276499", label: "85 98699-0288" },
     { id: 2, name: "Marcos David", phone: "5585996502168", label: "85 99650-2168" }
   ]
 
@@ -38,7 +42,7 @@ export default function Messenger() {
           {contacts.map((contact) => (
             <Link
               key={contact.id}
-              href={`https://wa.me/${contact.phone}`}
+              href={`https://wa.me/${contact.phone}?text=${encodedMessage}`}
               target="_blank"
               className="group flex items-center justify-between p-3 rounded-xl hover:bg-green-600/10 border border-transparent hover:border-green-600/30 transition-all">
               <div className="flex flex-col">
@@ -58,7 +62,7 @@ export default function Messenger() {
       </div>
 
       <button type='button' onClick={() => setOpen(!open)} aria-label="Abrir chat" className={`flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all duration-300
-                    ${open ? 'bg-zinc-800 rotate-90' : 'bg-green-600 hover:scale-110'}text-white`}>
+                    ${open ? 'bg-zinc-800 rotate-90' : 'bg-green-600 hover:scale-110'} text-white`}>
         {open ? <IoClose size={28} /> : <BiSolidMessageRounded size={26} />}
       </button>
     </div>
