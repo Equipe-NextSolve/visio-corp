@@ -8,7 +8,7 @@ export default function Logo() {
                     <Image
                         src='/logo3.png'
                         alt='logo'
-                        width={100}
+                        width={70}
                         height={20}
                         className="object-contain object-left"
                         
