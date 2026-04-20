@@ -48,9 +48,8 @@ export default function Header() {
             `}>
             <section className="max-w-7xl mx-auto flex items-center justify-between h-full px-6 w-full">
                 <Logo />
-                <div className="hidden md:block">
-                    <Navigation />
-                </div>
+         
+                {!isMobile && <Navigation />}
                 {isMobile && <Sidebar />}
             </section>
         </header>

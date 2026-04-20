@@ -3,17 +3,18 @@ import Image from 'next/image'
 
 export default function Logo() {
     return (
-        <section className='w-37.5 h-full flex items-center justify-center'>
-            <Link href='/' className='flex items-center justify-center'>
-                <div className="relative w-37.5 h-37.5 ">
+            <Link href='/' className='flex items-center justify-center overflow-hidden'>
+                <div className="relative w-37.5 h-20 flex items-center">
                     <Image
                         src='/logo3.png'
                         alt='logo'
-                        fill
-                        className='object-contain py-3'
+                        width={100}
+                        height={20}
+                        className="object-contain object-left"
+                        
                     />
                 </div>
             </Link>
-        </section>
+
     )
 }
