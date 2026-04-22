@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https:/www.visiocorp.com.br/'
+  const baseUrl = 'https://www.visiocorp.com.br/'
   return [
     {
       url: `${baseUrl}`,
