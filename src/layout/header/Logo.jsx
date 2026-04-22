@@ -11,7 +11,6 @@ export default function Logo() {
                         width={70}
                         height={20}
                         className="object-contain object-left"
-                        
                     />
                 </div>
             </Link>
