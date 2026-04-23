@@ -20,7 +20,7 @@ export const metadata = {
     authors: [{ name: "VisioCorp" }],
 
     icons: {
-        icon: "/logo.png",
+        icon: "/Logoviso.png",
     },
 
     openGraph: {
